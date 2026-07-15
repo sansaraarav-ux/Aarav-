@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+.site-header {
+  height: 20vh;
+  background-color: #2c7be5;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.content {
+  width: 80%;
+  margin: 30px auto;
+}
+
+.site-footer {
+  height: 60px;
+  background-color: #2c3e50;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px 0;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#f5f5f5;
+}
+
+.card{
+    width:300px;
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+.profile{
+    width:100px;
+    height:100px;
+    margin:0 auto 15px;
+    position:relative;
+}
+
+.profile img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.status{
+    position:absolute;
+    width:16px;
+    height:16px;
+    background:#32CD32;
+    border:3px solid #fff;
+    border-radius:50%;
+    top:8px;
+    right:5px;
+}
+
+h2{
+    font-size:30px;
+    margin-bottom:8px;
+    color:#222;
+}
+
+h4{
+    color:#777;
+    font-weight:500;
+    margin-bottom:18px;
+}
+
+.bio{
+    height:120px;
+    overflow-y:auto;
+    text-align:left;
+    color:#555;
+    line-height:1.6;
+    padding-right:5px;
+}
+
+.bio::-webkit-scrollbar{
+    width:6px;
+}
+
+.bio::-webkit-scrollbar-track{
+    background:#eee;
+}
+
+.bio::-webkit-scrollbar-thumb{
+    background:#999;
+    border-radius:10px;
+}
+
+.bio::-webkit-scrollbar-thumb:hover{
+    background:#666;
+}
+    </style>
+    
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>PROFILE</h1>
+    </header>
+
+    <main class="content">
+      <section>
+        <h2>
+          <div class="card">
+
+    <div class="profile">
+        <img src="https://via.placeholder.com/100" alt="Profile">
+        <span class="status"></span>
+    </div>
+
+    <h2>Jane Doe</h2>
+
+    <h4>Frontend Developer</h4>
+
+    <div class="bio">
+       property. This text is intentionally long so the bio box overflows and you can see the scrollbar appear inside the box instead of pushing the card taller
+    </div>
+
+</div></h2>   
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p></p>
+    </footer>
+  </body>
+</html>
