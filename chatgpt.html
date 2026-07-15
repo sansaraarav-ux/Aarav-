@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+</head>
+<body>
+
+<h2>Student Registration Form</h2>
+
+<form action="#" method="post">
+
+    <!-- Full Name -->
+    <label>Full Name:</label><br>
+    <input type="text"
+           name="fullname"
+           required
+           minlength="3"
+           maxlength="30"
+           pattern="[A-Za-z ]+"
+           title="Enter only letters and spaces (3-30 characters).">
+    <br><br>
+
+    <!-- Email -->
+    <label>Email:</label><br>
+    <input type="email"
+           name="email"
+           required>
+    <br><br>
+
+    <!-- Password -->
+    <label>Password:</label><br>
+    <input type="password"
+           name="password"
+           required
+           minlength="8"
+           maxlength="16"
+           pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,16}"
+           title="8-16 characters with at least one uppercase letter, one lowercase letter, and one number.">
+    <br><br>
+
+    <!-- Phone Number -->
+    <label>Phone Number:</label><br>
+    <input type="tel"
+           name="phone"
+           required
+           pattern="[0-9]{10}"
+           title="Enter exactly 10 digits.">
+    <br><br>
+
+    <!-- Age -->
+    <label>Age:</label><br>
+    <input type="number"
+           name="age"
+           required
+           min="18"
+           max="60">
+    <br><br>
+
+    <!-- Date of Birth -->
+    <label>Date of Birth:</label><br>
+    <input type="date"
+           name="dob"
+           required>
+    <br><br>
+
+    <!-- Gender -->
+    <label>Gender:</label><br>
+    <input type="radio" name="gender" value="Male" required> Male
+    <input type="radio" name="gender" value="Female"> Female
+    <input type="radio" name="gender" value="Other"> Other
+    <br><br>
+
+    <!-- Country -->
+    <label>Country:</label><br>
+    <select name="country" required>
+        <option value="">--Select Country--</option>
+        <option>Nepal</option>
+        <option>India</option>
+        <option>USA</option>
+        <option>Australia</option>
+    </select>
+    <br><br>
+
+    <!-- Address -->
+    <label>Address:</label><br>
+    <textarea name="address"
+              required
+              minlength="10"
+              maxlength="100"></textarea>
+    <br><br>
+
+    <!-- Website -->
+    <label>Website:</label><br>
+    <input type="url"
+           name="website"
+           placeholder="https://example.com"
+           required>
+    <br><br>
+
+    <!-- Upload File -->
+    <label>Upload Resume (PDF only):</label><br>
+    <input type="file"
+           name="resume"
+           accept=".pdf"
+           required>
+    <br><br>
+
+    <!-- Terms -->
+    <input type="checkbox"
+           required>
+    I agree to the Terms and Conditions.
+    <br><br>
+
+    <!-- Buttons -->
+    <input type="submit" value="Register">
+    <input type="reset" value="Reset">
+
+</form>
+
+</body>
+</html>
