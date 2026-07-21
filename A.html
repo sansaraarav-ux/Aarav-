@@ -3,9 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SkyTrail - Travel & Booking</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons (for the star rating) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <style>
+        /* Only the bits Bootstrap utilities don't cover: brand color + hero background */
+        :root {
+            --bs-primary: #2563eb;
+            --bs-primary-rgb: 37, 99, 235;
+            --secondary: #f59e0b;
+        }
+        .btn-primary { background-color: var(--bs-primary); border-color: var(--bs-primary); }
+        .btn-primary:hover { background-color: #1d4ed8; border-color: #1d4ed8; }
+        .btn-secondary { background-color: var(--secondary); border-color: var(--secondary); }
+        .btn-secondary:hover { background-color: #d97706; border-color: #d97706; }
+        .text-primary-custom { color: var(--bs-primary) !important; }
+        .text-secondary-custom { color: var(--secondary) !important; }
+
+        .hero {
+            min-height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                        url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&auto=format&fit=crop&w=2021&q=80') center/cover;
+        }
+
+        .card-img-top { height: 200px; object-fit: cover; }
+        .card:hover { transform: translateY(-5px); transition: transform 0.3s; }
+
+        .navbar-brand { color: var(--bs-primary) !important; font-weight: bold; }
+        .nav-link:hover { color: var(--bs-primary) !important; }
+        footer a:hover { color: var(--bs-primary) !important; }
+        footer h5 { color: var(--secondary); }
+    </style>
 </head>
-<body>
-    <h1>Hello, World!</h1>
+<body class="bg-light">
+
+    <!-- Header Navigation -->
+    <header class="navbar navbar-expand-lg bg-white shadow-sm sticky-top py-3">
+        <div class="container">
+            <a class="navbar-brand fs-4" href="#home">🌍 SkyTrail</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav mx-auto gap-lg-4">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#packages">Packages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                </ul>
+
+                <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+                    <select class="form-select form-select-sm" style="width: auto;" aria-label="Language">
+                        <option>EN</option>
+                        <option>FR</option>
+                        <option>ES</option>
+                    </select>
+                    <select class="form-select form-select-sm" style="width: auto;" aria-label="Currency">
+                        <option>USD ($)</option>
+                        <option>EUR (€)</option>
+                    </select>
+                    <button class="btn btn-primary btn-sm fw-bold text-nowrap">Log In / Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero & Search Filters -->
+    <section class="hero d-flex flex-column justify-content-center align-items-center text-white text-center px-3" id="home">
+        <h1 class="display-4 fw-bold mb-3">Discover Your Next Great Adventure</h1>
+        <p class="fs-5">Search over 1,000+ tour packages and flights worldwide.</p>
+
+        <div class="bg-white text-dark rounded-3 shadow p-4 mt-4 w-100" style="max-width: 900px;">
+            <div class="row g-3 align-items-end">
+                <div class="col-12 col-md">
+                    <label class="form-label small fw-bold text-secondary">Location</label>
+                    <input type="text" class="form-control" placeholder="Where to?">
+                </div>
+                <div class="col-12 col-md">
+                    <label class="form-label small fw-bold text-secondary">Category</label>
+                    <select class="form-select">
+                        <option>All Categories</option>
+                        <option>Beach</option>
+                        <option>Mountain</option>
+                        <option>City Tours</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md">
+                    <label class="form-label small fw-bold text-secondary">Duration</label>
+                    <select class="form-select">
+                        <option>Any length</option>
+                        <option>1-3 Days</option>
+                        <option>4-7 Days</option>
+                        <option>1+ Week</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md">
+                    <label class="form-label small fw-bold text-secondary">Max Price</label>
+                    <input type="number" class="form-control" placeholder="$500">
+                </div>
+                <div class="col-12 col-md-auto">
+                    <button class="btn btn-secondary fw-bold text-nowrap w-100">Search Flights & Tours</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Image Gallery/Cards -->
+    <div class="container">
+        <h2 class="text-center my-5" id="destinations">Trending Destinations</h2>
+
+        <div class="row g-4 pb-5">
+            <!-- Card 1 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Paris">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="card-title mb-0">Paris, France</h5>
+                            <span class="text-secondary-custom fw-bold"><i class="bi bi-star-fill"></i> 4.8 (124 reviews)</span>
+                        </div>
+                        <p class="card-text text-muted">5 Days • City Tour • Hotel Included</p>
+                        <div class="fs-3 fw-bold text-primary-custom mb-3">$899</div>
+                        <button class="btn btn-primary w-100">View Itinerary</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1512100356356-de1b84283e18?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Bali">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="card-title mb-0">Bali, Indonesia</h5>
+                            <span class="text-secondary-custom fw-bold"><i class="bi bi-star-fill"></i> 4.9 (342 reviews)</span>
+                        </div>
+                        <p class="card-text text-muted">7 Days • Beach & Spa • Flights Included</p>
+                        <div class="fs-3 fw-bold text-primary-custom mb-3">$1,250</div>
+                        <button class="btn btn-primary w-100">View Itinerary</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Swiss Alps">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="card-title mb-0">Swiss Alps</h5>
+                            <span class="text-secondary-custom fw-bold"><i class="bi bi-star-fill"></i> 4.7 (89 reviews)</span>
+                        </div>
+                        <p class="card-text text-muted">4 Days • Mountain Hiking • Cabin Stay</p>
+                        <div class="fs-3 fw-bold text-primary-custom mb-3">$650</div>
+                        <button class="btn btn-primary w-100">View Itinerary</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <h5>SkyTrail</h5>
+                    <p class="text-white-50">Your trusted travel partner since 2026.</p>
+                </div>
+                <div class="col-12 col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Contact Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Booking Confirmation</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-4">
+                    <h5>Follow Us</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Instagram</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Facebook</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS (needed for navbar collapse toggle) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+</html>         
